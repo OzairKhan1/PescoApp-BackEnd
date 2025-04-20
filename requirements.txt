@@ -1,7 +1,0 @@
-Flask
-selenium
-requests
-pandas
-streamlit
-openpyxl
-gunicorn
