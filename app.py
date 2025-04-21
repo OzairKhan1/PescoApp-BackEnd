@@ -3,14 +3,7 @@ from selenium_script import get_customer_id
 
 app = Flask(__name__)
 
-
-# Basic GET route for browser testing
-@app.route('/', methods=['GET'])
-def home():
-    return "Flask app is running!"
-
-
-# Your original POST route
+# POST route to get customer ID from account number
 @app.route('/get_customer_id', methods=['POST'])
 def get_customer():
     data = request.get_json()
@@ -28,7 +21,6 @@ def get_customer():
         return jsonify({"customer_id": customer_id})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
 
 if __name__ == '__main__':
     app.run(debug=True)
